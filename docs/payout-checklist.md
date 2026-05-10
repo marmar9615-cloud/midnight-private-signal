@@ -10,16 +10,16 @@ This is the human handoff for getting paid if the Midnight issue #314 submission
 - Article workbook exists at `docs/article-workbook-not-for-direct-submission.md`.
 - DEV article draft exists at `docs/devto-article-draft.md`.
 - DEV article is published at: https://dev.to/marmar9615cloud/building-private-signal-board-a-full-stack-midnight-dapp-with-compact-witnesses-react-and-41cm
+- X social post is published at: https://x.com/MarMarLabs/status/2053589507165843714
 - GitHub review comment is posted at: https://github.com/midnightntwrk/contributor-hub/issues/314#issuecomment-4416393433
 - GitHub issue comment draft exists at `docs/submission-comment.md`.
 - Social post drafts exist at `docs/social-posts.md`.
 
 ## What you need to do personally
 
-1. Post the social link with `#MidnightforDevs` and tag `@midnightntwrk`.
-2. Watch issue #314 for reviewer feedback.
-3. If selected, complete SumSub KYC.
-4. Provide a NIGHT-compatible wallet address when the Midnight team requests payout details.
+1. Watch issue #314 for reviewer feedback.
+2. If selected, complete SumSub KYC.
+3. Provide a NIGHT-compatible wallet address when the Midnight team requests payout details.
 
 ## Publish Gate
 

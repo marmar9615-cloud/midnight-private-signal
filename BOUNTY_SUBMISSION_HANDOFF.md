@@ -14,6 +14,7 @@ split between Compact public ledger state, private witness state, and non-sensit
 - Documented metadata API build/start steps in `README.md`.
 - Pushed the public repository to `https://github.com/marmar9615-cloud/midnight-private-signal`.
 - Published the DEV article at `https://dev.to/marmar9615cloud/building-private-signal-board-a-full-stack-midnight-dapp-with-compact-witnesses-react-and-41cm`.
+- Published the X social post at `https://x.com/MarMarLabs/status/2053589507165843714`.
 - Posted the GitHub review comment at `https://github.com/midnightntwrk/contributor-hub/issues/314#issuecomment-4416393433`.
 
 ## Verified Locally
@@ -62,7 +63,6 @@ Known warnings:
 
 Remaining user-owned steps:
 
-- Post on X/LinkedIn with `#MidnightforDevs` and tag `@midnightntwrk`.
 - Watch `midnightntwrk/contributor-hub#314` for review feedback after the `Ready for review` comment is posted.
 - Complete SumSub KYC and provide a NIGHT-compatible wallet address if approved.
 

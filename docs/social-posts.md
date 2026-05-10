@@ -1,6 +1,6 @@
 # Social Post Drafts
 
-Article is live. These are ready to post from your X or LinkedIn account.
+Article is live. X post is published at: https://x.com/MarMarLabs/status/2053589507165843714
 
 ## X / Twitter
 
