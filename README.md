@@ -2,7 +2,7 @@
 
 This project is built on the [Midnight Network](https://midnight.network/).
 
-[![Generic badge](https://img.shields.io/badge/Compact%20Compiler-0.30.0-1abc9c.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/Compact%20Compiler-0.31.0-1abc9c.svg)](https://shields.io/)
 [![Generic badge](https://img.shields.io/badge/TypeScript-5.9.3-blue.svg)](https://shields.io/)
 
 
@@ -77,7 +77,7 @@ This repository uses npm workspaces. Run installation once from the repository r
 
 ### Compile the Smart Contract
 
-The Compact compiler (`compactc 0.30.0`) generates TypeScript bindings and zero-knowledge circuits from the smart contract source code:
+The Compact compiler (`compactc 0.31.0`) generates TypeScript bindings and zero-knowledge circuits from the smart contract source code:
 
 ```bash
 cd contract
