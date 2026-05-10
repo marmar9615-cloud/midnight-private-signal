@@ -9,23 +9,21 @@ This is the human handoff for getting paid if the Midnight issue #314 submission
 - Screenshot asset exists at `docs/assets/private-signal-board.png`.
 - Article workbook exists at `docs/article-workbook-not-for-direct-submission.md`.
 - DEV article draft exists at `docs/devto-article-draft.md`.
-- DEV unpublished draft is saved at: https://dev.to/marmar9615cloud/building-private-signal-board-a-full-stack-midnight-dapp-with-compact-witnesses-react-and-32ef-temp-slug-5486083
+- DEV article is published at: https://dev.to/marmar9615cloud/building-private-signal-board-a-full-stack-midnight-dapp-with-compact-witnesses-react-and-41cm
+- GitHub review comment is posted at: https://github.com/midnightntwrk/contributor-hub/issues/314#issuecomment-4416393433
 - GitHub issue comment draft exists at `docs/submission-comment.md`.
 - Social post drafts exist at `docs/social-posts.md`.
 
 ## What you need to do personally
 
-1. Review the saved DEV draft and add your own wallet/test notes.
-2. Add your own local screenshots and wallet-flow notes.
-3. Publish the article publicly.
-4. Post the social link with `#MidnightforDevs` and tag `@midnightntwrk`.
-5. Comment on issue #314 with the article URL, repo URL, and the exact phrase `Ready for review`.
-6. If selected, complete SumSub KYC.
-7. Provide a NIGHT-compatible wallet address when the Midnight team requests payout details.
+1. Post the social link with `#MidnightforDevs` and tag `@midnightntwrk`.
+2. Watch issue #314 for reviewer feedback.
+3. If selected, complete SumSub KYC.
+4. Provide a NIGHT-compatible wallet address when the Midnight team requests payout details.
 
 ## Publish Gate
 
-The bounty issue warns that substantially AI-generated content may be disqualified. The repo, CI evidence, draft, screenshot, social text, and GitHub comment are ready, but the article should be published only after you have reviewed and are comfortable owning the wording.
+The bounty issue warns that substantially AI-generated content may be disqualified. The article has been published by the account owner; any follow-up revisions should stay in the author's own voice.
 
 ## Expected payout path
 

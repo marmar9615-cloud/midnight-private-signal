@@ -1,14 +1,13 @@
 # Social Post Drafts
 
-Do not post these until your article is live. Replace `[ARTICLE_URL]` first.
+Article is live. These are ready to post from your X or LinkedIn account.
 
 ## X / Twitter
 
 ```text
-I built Private Signal Board, a full-stack Midnight dApp walkthrough with a Compact contract, TypeScript witnesses/API, React UI, metadata API, Docker proof-server notes, and passing GitHub Actions CI.
+I built Private Signal Board, a full-stack Midnight dApp walkthrough covering a Compact contract, TypeScript witnesses/API, React UI, metadata API, Docker proof-server notes, and passing CI.
 
-Article: [ARTICLE_URL]
-Repo: https://github.com/marmar9615-cloud/midnight-private-signal
+Article: https://dev.to/marmar9615cloud/building-private-signal-board-a-full-stack-midnight-dapp-with-compact-witnesses-react-and-41cm
 
 #MidnightforDevs @midnightntwrk
 ```
@@ -27,7 +26,7 @@ The walkthrough covers:
 - Docker proof-server setup
 - GitHub Actions CI for the full workspace
 
-Article: [ARTICLE_URL]
+Article: https://dev.to/marmar9615cloud/building-private-signal-board-a-full-stack-midnight-dapp-with-compact-witnesses-react-and-41cm
 Repository: https://github.com/marmar9615-cloud/midnight-private-signal
 
 #MidnightforDevs @midnightntwrk

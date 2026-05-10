@@ -1,6 +1,6 @@
 # GitHub Issue Comment Draft
 
-Do not post this until your article is published and you are ready for review.
+Article is published. This is the exact issue comment used for the final review request.
 
 Issue: https://github.com/midnightntwrk/contributor-hub/issues/314
 
@@ -9,7 +9,7 @@ Hi Midnight team,
 
 I built **Private Signal Board**, a full-stack Midnight dApp tutorial project showing a Compact contract, TypeScript witnesses/API, a React UI, and a small metadata API for off-chain context.
 
-Article: [ARTICLE_URL]
+Article: https://dev.to/marmar9615cloud/building-private-signal-board-a-full-stack-midnight-dapp-with-compact-witnesses-react-and-41cm
 Repository: https://github.com/marmar9615-cloud/midnight-private-signal
 Screenshot: https://github.com/marmar9615-cloud/midnight-private-signal/blob/main/docs/assets/private-signal-board.png
 
@@ -26,5 +26,3 @@ Main branch CI and scan workflows are passing.
 
 Ready for review
 ```
-
-Replace `[ARTICLE_URL]` with your published tutorial URL.

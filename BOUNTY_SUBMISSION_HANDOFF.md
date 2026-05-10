@@ -13,7 +13,8 @@ split between Compact public ledger state, private witness state, and non-sensit
 - Added metadata API coverage to `.github/workflows/ci.yaml`.
 - Documented metadata API build/start steps in `README.md`.
 - Pushed the public repository to `https://github.com/marmar9615-cloud/midnight-private-signal`.
-- Saved an unpublished DEV draft at `https://dev.to/marmar9615cloud/building-private-signal-board-a-full-stack-midnight-dapp-with-compact-witnesses-react-and-32ef-temp-slug-5486083`.
+- Published the DEV article at `https://dev.to/marmar9615cloud/building-private-signal-board-a-full-stack-midnight-dapp-with-compact-witnesses-react-and-41cm`.
+- Posted the GitHub review comment at `https://github.com/midnightntwrk/contributor-hub/issues/314#issuecomment-4416393433`.
 
 ## Verified Locally
 
@@ -59,14 +60,10 @@ Known warnings:
 
 ## User-Owned Submission Steps
 
-You need to personally handle:
+Remaining user-owned steps:
 
-- Run the app with your Lace or 1AM wallet on Preprod.
-- Capture wallet screenshots without exposing seed/private data.
-- Review the saved DEV draft and add your own wallet/test notes.
-- Publish the article publicly on DEV after you are comfortable owning the wording.
 - Post on X/LinkedIn with `#MidnightforDevs` and tag `@midnightntwrk`.
-- Comment on `midnightntwrk/contributor-hub#314` with article link, repo/PR link, evidence summary, social link, and the exact phrase `Ready for review`.
+- Watch `midnightntwrk/contributor-hub#314` for review feedback after the `Ready for review` comment is posted.
 - Complete SumSub KYC and provide a NIGHT-compatible wallet address if approved.
 
 The strongest truthful posture is that tooling helped produce and verify the code, while you personally reviewed, ran, explained, and published the final tutorial.
