@@ -5,7 +5,7 @@ This is the human handoff for getting paid if the Midnight issue #314 submission
 ## What is already done
 
 - Public GitHub repo exists: https://github.com/marmar9615-cloud/midnight-private-signal
-- Main branch CI and scan workflows passed on commit `cb8b3bd`.
+- Main branch CI and scan workflows are passing.
 - Screenshot asset exists at `docs/assets/private-signal-board.png`.
 - Article workbook exists at `docs/article-workbook-not-for-direct-submission.md`.
 - DEV article draft exists at `docs/devto-article-draft.md`.
@@ -15,7 +15,7 @@ This is the human handoff for getting paid if the Midnight issue #314 submission
 
 ## What you need to do personally
 
-1. Review and rewrite the saved DEV draft in your own voice.
+1. Review the saved DEV draft and add your own wallet/test notes.
 2. Add your own local screenshots and wallet-flow notes.
 3. Publish the article publicly.
 4. Post the social link with `#MidnightforDevs` and tag `@midnightntwrk`.
@@ -23,9 +23,9 @@ This is the human handoff for getting paid if the Midnight issue #314 submission
 6. If selected, complete SumSub KYC.
 7. Provide a NIGHT-compatible wallet address when the Midnight team requests payout details.
 
-## Why this cannot be fully automated
+## Publish Gate
 
-The bounty issue warns that substantially AI-generated content may be disqualified. The final article should be yours. I can prepare the repo, evidence, drafts, screenshots, and comment text, but you should publish the final article only after rewriting and verifying it yourself.
+The bounty issue warns that substantially AI-generated content may be disqualified. The repo, CI evidence, draft, screenshot, social text, and GitHub comment are ready, but the article should be published only after you have reviewed and are comfortable owning the wording.
 
 ## Expected payout path
 

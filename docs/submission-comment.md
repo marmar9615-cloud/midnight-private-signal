@@ -22,7 +22,7 @@ What is included:
 - GitHub Actions CI covering contract, API, metadata API, CLI, and UI
 - Local Docker proof-server verification notes
 
-Main branch CI and scan workflows are passing on commit `cb8b3bd`.
+Main branch CI and scan workflows are passing.
 
 Ready for review
 ```

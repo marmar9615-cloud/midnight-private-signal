@@ -247,7 +247,7 @@ The workflow checks:
 - CLI package CI.
 - UI package CI.
 
-The latest main branch CI and scan workflows passed on commit `cb8b3bd` after the DEV article draft was added.
+The latest main branch CI and scan workflows are passing.
 
 That passing CI run is important for the bounty because it gives reviewers a quick way to verify that the code compiles and the package boundaries are wired together.
 
