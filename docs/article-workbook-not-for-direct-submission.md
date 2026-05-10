@@ -303,7 +303,161 @@ The next version of Private Signal Board should move from a public message board
 
 Another useful upgrade would be a richer wallet walkthrough. The current repo proves the scaffold compiles and the browser UI renders, but the final tutorial should include the author's own wallet screenshots and transaction notes from Lace or 1AM on the target Midnight network.
 
-## 16. Final Submission Checklist
+## 16. Wallet Flow Notes to Add in Your Version
+
+The bounty asks for wallet provider setup with Lace or 1AM through the dApp connector. I do not want to fake that part in the article, because wallet state and account screenshots should come from the person submitting the bounty. The repo is prepared for the browser path, but the final article should include your own wallet run.
+
+Use this subsection as a checklist when you rewrite the published tutorial.
+
+First, install or open the Midnight-compatible wallet you want to demonstrate. If you use Lace, make sure the browser extension is available in the same browser where you run the UI. If you use 1AM, follow the same pattern: confirm that the dApp connector is active, the test network is selected, and the wallet account is funded with the right test assets if the flow requires it.
+
+Second, start the local services in a predictable order:
+
+```bash
+docker run --rm -p 6300:6300 midnightntwrk/proof-server:8.0.3
+```
+
+Then, in another terminal:
+
+```bash
+cd metadata-api
+npm run build
+npm start
+```
+
+Then, in a third terminal:
+
+```bash
+cd bboard-ui
+npm run dev -- --host 127.0.0.1
+```
+
+When the browser opens, the metadata panel should report the metadata API status as healthy. The proof server URL should match the service you started locally. At that point, the article should walk through the wallet connection prompt and describe what the user sees before any transaction is sent.
+
+The final article should include:
+
+- A screenshot of the wallet connection prompt.
+- A screenshot of the app after the wallet is connected.
+- A note about which network was selected.
+- A note about whether the proof server was local or remote.
+- A short explanation of what the wallet signs or authorizes.
+
+Keep this section honest. If you cannot complete a wallet transaction on the current network, say exactly where the flow stops and show the rest of the repo verification. A clear limitation is better than a polished but unverified claim.
+
+## 17. Deeper Contract Walkthrough
+
+When rewriting the final tutorial, spend more time on the contract than a normal frontend article would. Midnight readers will care about how the contract boundary is shaped.
+
+A useful explanation structure:
+
+1. Start with the state variables. Explain which values are public and why they are safe to expose. In this app, the board message is intentionally public. That means the contract can be inspected by anyone and the UI can render the latest message without needing a private decryption path.
+2. Explain ownership and authorization. A board update should not be a free-for-all unless the product intentionally wants public posting. The scaffold's ownership pattern is a simple way to show how state transitions can be limited.
+3. Explain the sequence value. A sequence number gives clients a lightweight way to reason about state updates and caching. It also makes UI debugging easier because every successful update can be tied to a monotonic state change.
+4. Explain what is not in the contract. This is the part many tutorials skip. Do not store metadata, UI labels, backend health information, or deployment hints in the contract just because the UI needs them. Those values belong in configuration or off-chain services.
+
+That framing helps developers understand that privacy is partly a contract design issue and partly a systems design issue. Compact gives the app a private computation and state transition model, but the developer still has to decide which layer should own each piece of information.
+
+For a second version of Private Signal Board, the contract could become more Midnight-specific by adding commitments. Instead of storing the public message directly, the app could store a commitment to a private report and separately publish an approved summary. That would make the public board useful while keeping sensitive source material private. It would also create a stronger tutorial path for nullifiers, commitments, and selective disclosure.
+
+## 18. Deeper Metadata API Walkthrough
+
+The metadata API is deliberately small, but it plays an important role in the tutorial. Many dApps accidentally blur the boundary between contract truth and application convenience. This project keeps the distinction visible.
+
+The contract answers questions like:
+
+- What is the current board state?
+- Who is authorized to update it?
+- What transition rules must be followed?
+
+The metadata API answers questions like:
+
+- What app is this?
+- Which network is the UI targeting?
+- Where is the proof server expected to run?
+- What explanation should the UI show for this contract?
+
+Those questions are not the same. If the metadata API is down, the contract still exists. If the contract state changes, the metadata API should not pretend otherwise. By separating those responsibilities, the app becomes easier to audit.
+
+The service uses simple HTTP endpoints rather than a database-backed Express application. That was a deliberate choice for a tutorial. A bigger app could store metadata in Postgres, SQLite, or a CMS, but this bounty is about showing the Midnight lifecycle. The smallest useful backend keeps the focus on the contract, witness layer, proof server, and browser flow.
+
+The `GET /health` endpoint is useful for local development and CI-style checks. The `GET /campaign` endpoint is useful for the UI because it returns one structured object with the app title, network, proof server, privacy model, and contract list. The contract-specific route gives a future developer a natural place to add documentation per contract.
+
+If you expand this service later, good next endpoints would be:
+
+- `GET /docs`: links to tutorial pages and network references.
+- `GET /status`: richer health information for the proof server, indexer, and API.
+- `GET /contracts`: a list of supported contract surfaces.
+- `GET /releases`: deployed versions and contract addresses.
+
+The important rule is that those endpoints should explain the app, not secretly replace the contract.
+
+## 19. Testing Strategy
+
+The project uses several layers of verification because a full-stack dApp can fail in several different ways.
+
+Contract verification checks that the Compact code compiles and the generated TypeScript remains usable. This is the most important build step. If the contract does not compile, nothing else matters for the bounty.
+
+API verification checks that the TypeScript packages around the generated contract remain valid. This catches dependency drift and typing problems before they reach the browser.
+
+Metadata API verification checks that the off-chain service behaves predictably. The tests cover the health endpoint, campaign endpoint, known contract endpoint, and unknown contract behavior.
+
+UI verification checks that the React package typechecks, lints, tests, and builds. The production build also revealed the upstream `isomorphic-ws/browser.js` warning. Since the build succeeds and the warning comes from an upstream Midnight dependency, the project documents it rather than hiding it.
+
+The commands I used locally were:
+
+```bash
+cd contract
+npm run ci
+```
+
+```bash
+cd api
+npm run ci
+```
+
+```bash
+npm run typecheck -w metadata-api
+npm run build -w metadata-api
+npm run test -w metadata-api
+```
+
+```bash
+cd bboard-cli
+npm run ci
+```
+
+```bash
+cd bboard-ui
+npm run ci
+npm run build
+```
+
+The GitHub Actions workflow runs those checks again on push. The final article should link to the passing CI run and explain that the repo is not just a code dump. It compiles under automation.
+
+## 20. How to Position the Tutorial for Reviewers
+
+The strongest way to present this bounty submission is not "I made a bulletin board." A bulletin board by itself is not novel. The stronger framing is:
+
+"I built a small but complete Midnight dApp that shows how to separate public contract state, private witness/proof inputs, browser interaction, and off-chain metadata."
+
+That sentence is closer to what a reviewer is likely to care about. It connects the code to Midnight's reason for existing. It also distinguishes the project from generic React tutorials.
+
+When rewriting the article, make the reader feel the lifecycle:
+
+- Start from the product idea.
+- Show the contract boundary.
+- Show how the witness layer fits.
+- Compile the Compact contract.
+- Run the proof server.
+- Run the metadata backend.
+- Run the React UI.
+- Connect the wallet.
+- Read state in the browser.
+- Explain what is public, private, and off-chain.
+
+That order turns the article from a list of files into a working developer story.
+
+## 21. Final Submission Checklist
 
 Before publishing the final article:
 
@@ -318,7 +472,7 @@ Before publishing the final article:
 
 Do not skip the last phrase. The issue text asks for that exact review signal.
 
-## 17. Reference Links
+## 22. Reference Links
 
 - Bounty issue: https://github.com/midnightntwrk/contributor-hub/issues/314
 - Repository: https://github.com/marmar9615-cloud/midnight-private-signal
